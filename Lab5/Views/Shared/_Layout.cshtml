@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+</head>
+<body>
+    <div>
+        <nav>
+            @Html.ActionLink("Home", "Index", "Home") |
+            @Html.ActionLink("Customers", "Index", "Customers") |
+            @Html.ActionLink("Food Delivery Services", "Index", "FoodDeliveryServices")
+        </nav>
+        @RenderBody()
+        <footer>
+            <p>&copy; 2025 Yen Huynh</p>
+        </footer>
+        @RenderSection("Scripts", required: false)
+    </div>
+</body>
+</html>
