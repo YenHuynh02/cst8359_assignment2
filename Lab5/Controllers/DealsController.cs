@@ -7,33 +7,55 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Lab5.Data;
 using Lab5.Models;
+using Azure.Storage.Blobs;
+using Azure.Storage.Blobs.Models;
+using System.ComponentModel;
 using Lab5.Models.ViewModels;
 
 namespace Lab5.Controllers
 {
-    public class FoodDeliveryServicesController : Controller
+    public class DealsController : Controller
     {
         private readonly DealsFinderDbContext _context;
+        private readonly BlobServiceClient _blobServiceClient;
+        private readonly string dealContainerName = "dealsimages";
         private readonly IWebHostEnvironment _env;
 
-        public FoodDeliveryServicesController(DealsFinderDbContext context)
+
+
+
+        public DealsController(DealsFinderDbContext context, BlobServiceClient blobServiceClient, IWebHostEnvironment env)
         {
             _context = context;
+            _blobServiceClient = blobServiceClient;
+            _env = env;
+        }
+        public IActionResult OnGet()
+        {
+            return View();
         }
 
-        // GET: FoodDeliveryServices
-        public async Task<IActionResult> Index()
+        // GET: Deals
+        public async Task<IActionResult> Index(string id)
         {
-            var viewModel = new DealsViewModel
+            if (string.IsNullOrEmpty(id))
+                return NotFound();
+
+            var store = await _context.FoodDeliveryServices.FindAsync(id);
+            if (store == null)
+                return NotFound();
+
+            var flyers = await _context.Deals.Where(f => f.ServiceId == id).ToListAsync();
+
+            var viewModel = new DealsPostsViewModel
             {
-                Customers = await _context.Customers.ToListAsync(),
-                FoodDeliveryServices = await _context.FoodDeliveryServices.ToListAsync(),
-                Subscriptions = await _context.Subscriptions.ToListAsync()
+                FoodDeliveryService = store,
+                Deals = flyers
             };
             return View(viewModel);
         }
 
-        // GET: FoodDeliveryServices/Details/5
+        // GET: Deals/Details/5
         public async Task<IActionResult> Details(string id)
         {
             if (id == null)
@@ -41,16 +63,17 @@ namespace Lab5.Controllers
                 return NotFound();
             }
 
-            var foodDeliveryService = await _context.FoodDeliveryServices
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (foodDeliveryService == null)
+            var deal = await _context.Deals
+                .FirstOrDefaultAsync(m => m.ServiceId == id);
+            if (deal == null)
             {
                 return NotFound();
             }
 
-            return View(foodDeliveryService);
+            return View(deal);
         }
 
+        // GET: Deals/Create
         public async Task<IActionResult> Create(string id)
         {
             var store = await _context.FoodDeliveryServices.FindAsync(id);
@@ -83,26 +106,34 @@ namespace Lab5.Controllers
                 var uploads = Path.Combine(_env.WebRootPath, "uploads");
                 Directory.CreateDirectory(uploads);
                 var filePath = Path.Combine(uploads, model.File.FileName);
+
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await model.File.CopyToAsync(stream);
                 }
 
-                var service = new FoodDeliveryService
+                var flyer = new Deal
                 {
-                    Id = store.Id,
-                    Title = model.File.FileName
+                    ServiceId = store.Id,
+                    DealTitle = model.File.FileName,
+                    ImageURL = "/uploads/" + model.File.FileName // Store relative path
                 };
-                _context.FoodDeliveryServices.Add(service);
+
+                _context.Deals.Add(flyer);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index), new { id = store.Id });
+                
             }
-
-            return View(model);
+            return RedirectToAction(nameof(Index), new { id = store.Id });
         }
 
-        // GET: FoodDeliveryServices/Edit/5
+
+
+
+
+
+
+        // GET: Deals/Edit/5
         public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
@@ -110,22 +141,22 @@ namespace Lab5.Controllers
                 return NotFound();
             }
 
-            var foodDeliveryService = await _context.FoodDeliveryServices.FindAsync(id);
-            if (foodDeliveryService == null)
+            var deal = await _context.Deals.FindAsync(id);
+            if (deal == null)
             {
                 return NotFound();
             }
-            return View(foodDeliveryService);
+            return View(deal);
         }
 
-        // POST: FoodDeliveryServices/Edit/5
+        // POST: Deals/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Title,Fee")] FoodDeliveryService foodDeliveryService)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,DealTitle,ImageURL,ServiceId")] Deal deal)
         {
-            if (id != foodDeliveryService.Id)
+            if (id != deal.ServiceId)
             {
                 return NotFound();
             }
@@ -134,12 +165,12 @@ namespace Lab5.Controllers
             {
                 try
                 {
-                    _context.Update(foodDeliveryService);
+                    _context.Update(deal);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!FoodDeliveryServiceExists(foodDeliveryService.Id))
+                    if (!DealExists(deal.ServiceId))
                     {
                         return NotFound();
                     }
@@ -150,45 +181,49 @@ namespace Lab5.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(foodDeliveryService);
+            return View(deal);
         }
 
-        // GET: FoodDeliveryServices/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        // GET: Flyers/Delete/5
+        public async Task<IActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var store = await _context.FoodDeliveryServices
+            var flyer = await _context.Deals
+                .Include(f => f.FoodDeliveryService)
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (store == null)
-            {
+            if (flyer == null)
                 return NotFound();
-            }
 
-            return View(store);
+            return View(flyer);
         }
 
-        // POST: Stores/Delete/5
+        // POST: Flyers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store != null)
-            {
-                _context.FoodDeliveryServices.Remove(store);
-            }
+            var flyer = await _context.Deals.FindAsync(id.ToString());
 
+            if (flyer == null)
+                return NotFound();
+
+            // Delete the file from server if required
+            var uploads = Path.Combine(_env.WebRootPath, "uploads");
+            var filePath = Path.Combine(uploads, flyer.DealTitle);
+            if (System.IO.File.Exists(filePath))
+                System.IO.File.Delete(filePath);
+
+            var storeId = flyer.ServiceId;
+            _context.Deals.Remove(flyer);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction(nameof(Index), new { id = storeId });
         }
 
-        private bool FoodDeliveryServiceExists(string id)
+        private bool DealExists(string id)
         {
-            return _context.FoodDeliveryServices.Any(e => e.Id == id);
+            return _context.Deals.Any(e => e.ServiceId == id);
         }
+
+        
     }
 }

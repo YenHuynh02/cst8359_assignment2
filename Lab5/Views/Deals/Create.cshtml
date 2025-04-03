@@ -1,0 +1,27 @@
+﻿@model Lab5.Models.ViewModels.FileInputViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+
+<h1>Upload Flyer for @Model.FoodDeliveryServiceTitle</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>Choose Deal File:</label>
+        <input class="form-control" type="file" name="File" />
+    </div>
+    <input type="hidden" name="FoodDeliveryServiceId" value="@Model.FoodDeliveryServiceId" />
+    <input type="hidden" name="FoodDeliveryServiceTitle" value="@Model.FoodDeliveryServiceTitle" />
+    <button type="submit" class="btn btn-primary">Upload</button>
+    <a class="btn btn-secondary" asp-action="Index" asp-route-id="@Model.FoodDeliveryServiceId">Cancel</a>
+</form>
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

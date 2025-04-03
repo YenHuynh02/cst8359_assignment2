@@ -1,0 +1,36 @@
+﻿@model Lab5.Models.ViewModels.DealsPostsViewModel
+
+@{
+    ViewData["Title"] = "Deals for " + Model.FoodDeliveryService.Title;
+}
+
+<h1>Deals for @Model.FoodDeliveryService.Title</h1>
+
+<p>
+    <a asp-action="Create" asp-route-id="@Model.FoodDeliveryService.Id">Upload New Deal</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Preview</th>
+            <th>File Name</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var flyer in Model.Deals)
+        {
+            <tr>
+                <td>
+
+                    <img src="~/uploads/@flyer.DealTitle" alt="Flyer Image" style="max-width:200px; height:auto;" />
+                </td>
+                <td>@flyer.DealTitle</td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@flyer.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -11,6 +11,8 @@ namespace Lab5.Data
         public DbSet<FoodDeliveryService> FoodDeliveryServices { get; set; }
         public DbSet<Subscription> Subscriptions { get; set; }
 
+        public DbSet<Deal> Deals { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Customer>().ToTable("Customer");
@@ -22,6 +24,9 @@ namespace Lab5.Data
             
             // Relationship between FoodDeliveryService and Subscriptions
             modelBuilder.Entity<Subscription>().HasOne(x => x.FoodDeliveryService).WithMany(x => x.Subscriptions).HasForeignKey(x => x.ServiceId);
+
+            modelBuilder.Entity<Deal>()
+                .HasKey(d => new { d.ServiceId });
         }
     }       
 }

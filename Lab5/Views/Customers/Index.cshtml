@@ -39,9 +39,32 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>   |
+                    @* Need to adjust *@
+                    <a asp-action="EditSubscription" asp-route-id="@item.Id">Edit Subscription</a>                    |
+                    @* Need to adjust *@
+                    <a asp-action="Index" asp-route-selectedCustomerId="@item.Id">Select</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@if (ViewBag.SelectedCustomer != null)
+{
+    <h3>Subscriptions for @ViewBag.SelectedCustomer.FirstName @ViewBag.SelectedCustomer.LastName</h3>
+
+    @if (ViewBag.SelectedSubscriptions != null && ViewBag.SelectedSubscriptions.Count > 0)
+    {
+        <ul>
+            @foreach (var service in ViewBag.SelectedSubscriptions)
+            {
+                <li>@service</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No subscriptions found.</p>
+    }
+}

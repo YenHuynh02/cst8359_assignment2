@@ -1,0 +1,40 @@
+﻿@model Lab5.Models.ViewModels.CustomerSubscriptionViewModel
+
+@{
+    ViewData["Title"] = "Edit Subscriptions";
+}
+
+<h2>Edit Subscriptions for @Model.Customer.FullName</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Food Delivery Service</th>
+            <th>Subscribed?</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Subscriptions)
+        {
+            <tr>
+                <td>@item.Title</td>
+                <td>@item.IsSubscribed</td>
+                <td>
+                    @if (item.IsSubscribed)
+                    {
+                        <a asp-action="RemoveSubscription"
+                           asp-route-customerId="@Model.Customer.Id"
+                           asp-route-storeId="@item.FoodDeliveryServiceId">Unsubscribe</a>
+                    }
+                    else
+                    {
+                        <a asp-action="AddSubscription"
+                           asp-route-customerId="@Model.Customer.Id"
+                           asp-route-storeId="@item.FoodDeliveryServiceId">Subscribe</a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

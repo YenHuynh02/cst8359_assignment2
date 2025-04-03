@@ -1,0 +1,17 @@
+﻿@model Lab5.Models.Deal
+
+@{
+    ViewData["Title"] = "Delete Deal";
+}
+
+<h1>Delete </h1>
+<h1>Delete Deal</h1>
+
+<p>Are you sure you want to delete this deal?</p>
+<div>
+    <h4>File: @Model.DealTitle</h4>
+    <form method="post">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="btn btn-secondary" asp-action="Index" asp-route-id="@Model.ServiceId">Cancel</a>
+    </form>
+</div>

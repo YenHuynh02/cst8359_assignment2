@@ -1,3 +1,4 @@
+using Azure.Storage.Blobs;
 using Lab5.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,8 @@ namespace Lab5
             builder.Services.AddControllersWithViews();
             var connection = builder.Configuration.GetConnectionString("DefaultConnection");
             builder.Services.AddDbContext<DealsFinderDbContext>(options => options.UseSqlServer(connection));
+            var blobConnection = builder.Configuration.GetConnectionString("AzureBlobStorage");
+            builder.Services.AddSingleton(new BlobServiceClient(blobConnection));
             builder.Services.AddSession();
             var app = builder.Build();
 
