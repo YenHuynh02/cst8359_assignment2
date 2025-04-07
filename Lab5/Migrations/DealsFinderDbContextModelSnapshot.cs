@@ -62,10 +62,7 @@ namespace Lab5.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
@@ -102,12 +99,12 @@ namespace Lab5.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ServiceId")
+                    b.Property<string>("FoodDeliveryServiceId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("CustomerId", "ServiceId");
+                    b.HasKey("CustomerId", "FoodDeliveryServiceId");
 
-                    b.HasIndex("ServiceId");
+                    b.HasIndex("FoodDeliveryServiceId");
 
                     b.ToTable("Subscriptions");
                 });
@@ -131,7 +128,7 @@ namespace Lab5.Migrations
 
                     b.HasOne("Lab5.Models.FoodDeliveryService", "FoodDeliveryService")
                         .WithMany("Subscriptions")
-                        .HasForeignKey("ServiceId")
+                        .HasForeignKey("FoodDeliveryServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

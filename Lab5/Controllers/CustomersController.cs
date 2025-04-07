@@ -193,7 +193,7 @@ namespace Lab5.Controllers
                 .ToListAsync();
 
             var registeredFds = (from st in foodDeliveryServices
-                                    join subs in customerSubscriptions on st.Id equals subs.ServiceId
+                                    join subs in customerSubscriptions on st.Id equals subs.FoodDeliveryServiceId
                                     select new FoodDeliveryServiceSubscriptionViewModel
                                     {
                                         FoodDeliveryServiceId = st.Id.ToString(),
@@ -202,7 +202,7 @@ namespace Lab5.Controllers
                                     }).ToList();
 
             var unregisteredFds = foodDeliveryServices
-                .Where(st => !customerSubscriptions.Any(cs => cs.ServiceId == st.Id))
+                .Where(st => !customerSubscriptions.Any(cs => cs.FoodDeliveryServiceId == st.Id))
                 .Select(st => new FoodDeliveryServiceSubscriptionViewModel
                 {
                     FoodDeliveryServiceId = st.Id.ToString(),
@@ -225,7 +225,7 @@ namespace Lab5.Controllers
 
         public async Task<IActionResult> AddSubscription(int customerId, string foodDeliveryServiceId)
         {
-            var subscription = new Subscription { CustomerId = customerId, ServiceId = foodDeliveryServiceId };
+            var subscription = new Subscription { CustomerId = customerId, FoodDeliveryServiceId = foodDeliveryServiceId };
             _context.Subscriptions.Add(subscription);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(EditSubscription), new { id = customerId });
@@ -235,7 +235,7 @@ namespace Lab5.Controllers
         public async Task<IActionResult> RemoveSubscription(int customerId, string foodDeliveryServiceId)
         {
             var subscription = await _context.Subscriptions
-                .FirstOrDefaultAsync(s => s.CustomerId == customerId && s.ServiceId == foodDeliveryServiceId);
+                .FirstOrDefaultAsync(s => s.CustomerId == customerId && s.FoodDeliveryServiceId == foodDeliveryServiceId);
             if (subscription != null)
             {
                 _context.Subscriptions.Remove(subscription);

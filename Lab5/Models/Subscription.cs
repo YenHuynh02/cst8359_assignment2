@@ -3,7 +3,8 @@
     public class Subscription
     {
         public int CustomerId { get; set; }
-        public string ServiceId;
+        public string FoodDeliveryServiceId { get; set; }
+
         public Customer Customer { get; set; }
         public FoodDeliveryService FoodDeliveryService { get; set; }
     }

@@ -154,7 +154,7 @@ namespace Lab5.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,DealTitle,ImageURL,ServiceId")] Deal deal)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,DealTitle,ImageURL,FoodDeliveryServiceId")] Deal deal)
         {
             if (id != deal.ServiceId)
             {

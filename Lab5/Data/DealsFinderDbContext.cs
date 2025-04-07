@@ -17,13 +17,13 @@ namespace Lab5.Data
         {
             modelBuilder.Entity<Customer>().ToTable("Customer");
             modelBuilder.Entity<FoodDeliveryService>().ToTable("FoodDeliveryService");
-            modelBuilder.Entity<Subscription>().HasKey(x => new { x.CustomerId, x.ServiceId });
+            modelBuilder.Entity<Subscription>().HasKey(x => new { x.CustomerId, x.FoodDeliveryServiceId });
 
             // Relationship between Customer and Subscriptions
             modelBuilder.Entity<Subscription>().HasOne(x => x.Customer).WithMany(x => x.Subscriptions).HasForeignKey(x => x.CustomerId);
             
             // Relationship between FoodDeliveryService and Subscriptions
-            modelBuilder.Entity<Subscription>().HasOne(x => x.FoodDeliveryService).WithMany(x => x.Subscriptions).HasForeignKey(x => x.ServiceId);
+            modelBuilder.Entity<Subscription>().HasOne(x => x.FoodDeliveryService).WithMany(x => x.Subscriptions).HasForeignKey(x => x.FoodDeliveryServiceId);
 
             modelBuilder.Entity<Deal>()
                 .HasKey(d => new { d.ServiceId });

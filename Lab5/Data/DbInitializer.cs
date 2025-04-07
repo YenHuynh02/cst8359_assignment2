@@ -39,12 +39,12 @@ namespace Lab5.Data
 
             var subscriptions = new Subscription[]
             {
-               new Subscription{CustomerId=1, ServiceId="A1"},
-               new Subscription{CustomerId=1, ServiceId="B1"},
-               new Subscription{CustomerId=1, ServiceId="C1"},
-               new Subscription{CustomerId=2, ServiceId="A1"},
-               new Subscription{CustomerId=3, ServiceId="A1"},
-               new Subscription{CustomerId=4, ServiceId="A2"}
+               new Subscription{CustomerId=1, FoodDeliveryServiceId="A1"},
+               new Subscription{CustomerId=1, FoodDeliveryServiceId="B1"},
+               new Subscription{CustomerId=1, FoodDeliveryServiceId="C1"},
+               new Subscription{CustomerId=2, FoodDeliveryServiceId="A1"},
+               new Subscription{CustomerId=3, FoodDeliveryServiceId="A1"},
+               new Subscription{CustomerId=4, FoodDeliveryServiceId="A2"}
             };
             foreach(Subscription subscription in subscriptions)
             {

@@ -5,3 +5,4 @@ wwwroot\uploads\bird.jpg
 wwwroot\uploads\Costco.png
 wwwroot\uploads\Food_Basics.png
 wwwroot\uploads\leaf.jpg
+wwwroot\uploads\linkedln.png

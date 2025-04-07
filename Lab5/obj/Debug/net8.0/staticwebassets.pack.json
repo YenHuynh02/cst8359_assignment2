@@ -1,32 +1,36 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\StyleSheet.css",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\StyleSheet.css",
       "PackagePath": "staticwebassets\\StyleSheet.css"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\bootstrap.min.css",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Costco.png",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\Costco.png",
       "PackagePath": "staticwebassets\\uploads\\Costco.png"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
       "PackagePath": "staticwebassets\\uploads\\Food_Basics.png"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\ballon.jpg",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\ballon.jpg",
       "PackagePath": "staticwebassets\\uploads\\ballon.jpg"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\bird.jpg",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\bird.jpg",
       "PackagePath": "staticwebassets\\uploads\\bird.jpg"
     },
     {
-      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\leaf.jpg",
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\leaf.jpg",
       "PackagePath": "staticwebassets\\uploads\\leaf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\linkedln.png",
+      "PackagePath": "staticwebassets\\uploads\\linkedln.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab5.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

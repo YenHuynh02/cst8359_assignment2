@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <ul>
-                        @foreach (var subscription in Model.Subscriptions.Where(s => s.ServiceId == store.Id))
+                        @foreach (var subscription in Model.Subscriptions.Where(s => s.FoodDeliveryServiceId == store.Id))
                         {
                             var customer = Model.Customers.FirstOrDefault(c => c.Id == subscription.CustomerId);
                             if (customer != null)

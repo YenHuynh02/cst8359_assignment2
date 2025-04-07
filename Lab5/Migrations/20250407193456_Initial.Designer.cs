@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lab5.Migrations
 {
     [DbContext(typeof(DealsFinderDbContext))]
-    [Migration("20250401182700_init")]
-    partial class init
+    [Migration("20250407193456_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -51,6 +51,34 @@ namespace Lab5.Migrations
                     b.ToTable("Customer", (string)null);
                 });
 
+            modelBuilder.Entity("Lab5.Models.Deal", b =>
+                {
+                    b.Property<string>("ServiceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DealTitle")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FoodDeliveryServiceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Id")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("ServiceId");
+
+                    b.HasIndex("FoodDeliveryServiceId");
+
+                    b.ToTable("Deals");
+                });
+
             modelBuilder.Entity("Lab5.Models.FoodDeliveryService", b =>
                 {
                     b.Property<string>("Id")
@@ -74,14 +102,23 @@ namespace Lab5.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ServiceId")
+                    b.Property<string>("FoodDeliveryServiceId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("CustomerId", "ServiceId");
+                    b.HasKey("CustomerId", "FoodDeliveryServiceId");
 
-                    b.HasIndex("ServiceId");
+                    b.HasIndex("FoodDeliveryServiceId");
 
                     b.ToTable("Subscriptions");
+                });
+
+            modelBuilder.Entity("Lab5.Models.Deal", b =>
+                {
+                    b.HasOne("Lab5.Models.FoodDeliveryService", "FoodDeliveryService")
+                        .WithMany()
+                        .HasForeignKey("FoodDeliveryServiceId");
+
+                    b.Navigation("FoodDeliveryService");
                 });
 
             modelBuilder.Entity("Lab5.Models.Subscription", b =>
@@ -94,7 +131,7 @@ namespace Lab5.Migrations
 
                     b.HasOne("Lab5.Models.FoodDeliveryService", "FoodDeliveryService")
                         .WithMany("Subscriptions")
-                        .HasForeignKey("ServiceId")
+                        .HasForeignKey("FoodDeliveryServiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
