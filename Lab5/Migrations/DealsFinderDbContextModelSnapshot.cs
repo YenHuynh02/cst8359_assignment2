@@ -48,6 +48,37 @@ namespace Lab5.Migrations
                     b.ToTable("Customer", (string)null);
                 });
 
+            modelBuilder.Entity("Lab5.Models.Deal", b =>
+                {
+                    b.Property<string>("ServiceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("DealTitle")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("FoodDeliveryServiceId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ImageURL")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("ServiceId");
+
+                    b.HasIndex("FoodDeliveryServiceId");
+
+                    b.ToTable("Deals");
+                });
+
             modelBuilder.Entity("Lab5.Models.FoodDeliveryService", b =>
                 {
                     b.Property<string>("Id")
@@ -79,6 +110,15 @@ namespace Lab5.Migrations
                     b.HasIndex("ServiceId");
 
                     b.ToTable("Subscriptions");
+                });
+
+            modelBuilder.Entity("Lab5.Models.Deal", b =>
+                {
+                    b.HasOne("Lab5.Models.FoodDeliveryService", "FoodDeliveryService")
+                        .WithMany()
+                        .HasForeignKey("FoodDeliveryServiceId");
+
+                    b.Navigation("FoodDeliveryService");
                 });
 
             modelBuilder.Entity("Lab5.Models.Subscription", b =>

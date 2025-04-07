@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\StyleSheet.css",
+      "PackagePath": "staticwebassets\\StyleSheet.css"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Costco.png",
+      "PackagePath": "staticwebassets\\uploads\\Costco.png"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
+      "PackagePath": "staticwebassets\\uploads\\Food_Basics.png"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\ballon.jpg",
+      "PackagePath": "staticwebassets\\uploads\\ballon.jpg"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\bird.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bird.jpg"
+    },
+    {
+      "Id": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\leaf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\leaf.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab5.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab5.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Lab5.props",
+      "PackagePath": "build\\Lab5.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Lab5.props",
+      "PackagePath": "buildMultiTargeting\\Lab5.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Lab5.props",
+      "PackagePath": "buildTransitive\\Lab5.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

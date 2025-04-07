@@ -1,0 +1,7 @@
+wwwroot\bootstrap.min.css
+wwwroot\StyleSheet.css
+wwwroot\uploads\ballon.jpg
+wwwroot\uploads\bird.jpg
+wwwroot\uploads\Costco.png
+wwwroot\uploads\Food_Basics.png
+wwwroot\uploads\leaf.jpg

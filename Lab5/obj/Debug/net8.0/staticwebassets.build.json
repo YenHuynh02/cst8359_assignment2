@@ -1,0 +1,743 @@
+{
+  "Version": 1,
+  "Hash": "I39pX1NVUqxV4qPKgFOpaMmQfrbPd/XUP/1i6SeCiUc=",
+  "Source": "Lab5",
+  "BasePath": "_content/Lab5",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "Lab5\\wwwroot",
+      "Source": "Lab5",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\bootstrap.min.css",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2h4ginbp0t",
+      "Integrity": "WodUiL3hLdnPz1VCkzqkieUoNClrrERoNk2fJcGgRgI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\StyleSheet.css",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "StyleSheet#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "dumh3qqvkd",
+      "Integrity": "G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\ballon.jpg",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/ballon#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vv95dhn5it",
+      "Integrity": "S4KtktrupudY5lb7T3T1rsyWp9DMcZpM1tAQqY8re58=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\ballon.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\bird.jpg",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/bird#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xkyfnsxve0",
+      "Integrity": "0ZNrAcXOLOFnz0RJcvWGEW5unCP63n/8mnBq7BOE9Yk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\bird.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Costco.png",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/Costco#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "en4fru1rbz",
+      "Integrity": "SshUfYnPZ7t/UlQNgwVDkKjVzCgl4HkTKHXFGEZYukk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Costco.png"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/Food_Basics#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "iwsu4waqdp",
+      "Integrity": "Lu4k3VOO24+FUyKfypZBbOHWAq1KVM5yx09RGVTydsU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\Food_Basics.png"
+    },
+    {
+      "Identity": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\leaf.jpg",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/leaf#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wdkyh4s49n",
+      "Integrity": "tJzahI+npadRqv/M71Ik5xHeCro0XUtwGjB7i8F9kLg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\leaf.jpg"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "bootstrap.min.2h4ginbp0t.css",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211259"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WodUiL3hLdnPz1VCkzqkieUoNClrrERoNk2fJcGgRgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 16:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2h4ginbp0t"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WodUiL3hLdnPz1VCkzqkieUoNClrrERoNk2fJcGgRgI="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap.min.css",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211259"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WodUiL3hLdnPz1VCkzqkieUoNClrrERoNk2fJcGgRgI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 26 Mar 2025 16:55:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WodUiL3hLdnPz1VCkzqkieUoNClrrERoNk2fJcGgRgI="
+        }
+      ]
+    },
+    {
+      "Route": "StyleSheet.css",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\StyleSheet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 18:22:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI="
+        }
+      ]
+    },
+    {
+      "Route": "StyleSheet.dumh3qqvkd.css",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\StyleSheet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1521"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 18:22:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dumh3qqvkd"
+        },
+        {
+          "Name": "label",
+          "Value": "StyleSheet.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ballon.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\ballon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5047522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S4KtktrupudY5lb7T3T1rsyWp9DMcZpM1tAQqY8re58=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-S4KtktrupudY5lb7T3T1rsyWp9DMcZpM1tAQqY8re58="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/ballon.vv95dhn5it.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\ballon.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5047522"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"S4KtktrupudY5lb7T3T1rsyWp9DMcZpM1tAQqY8re58=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:09:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vv95dhn5it"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/ballon.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-S4KtktrupudY5lb7T3T1rsyWp9DMcZpM1tAQqY8re58="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bird.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\bird.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15126333"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0ZNrAcXOLOFnz0RJcvWGEW5unCP63n/8mnBq7BOE9Yk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:09:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0ZNrAcXOLOFnz0RJcvWGEW5unCP63n/8mnBq7BOE9Yk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/bird.xkyfnsxve0.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\bird.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15126333"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0ZNrAcXOLOFnz0RJcvWGEW5unCP63n/8mnBq7BOE9Yk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:09:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xkyfnsxve0"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/bird.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0ZNrAcXOLOFnz0RJcvWGEW5unCP63n/8mnBq7BOE9Yk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Costco.en4fru1rbz.png",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Costco.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "392796"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SshUfYnPZ7t/UlQNgwVDkKjVzCgl4HkTKHXFGEZYukk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 17:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "en4fru1rbz"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Costco.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-SshUfYnPZ7t/UlQNgwVDkKjVzCgl4HkTKHXFGEZYukk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Costco.png",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Costco.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "392796"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"SshUfYnPZ7t/UlQNgwVDkKjVzCgl4HkTKHXFGEZYukk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 17:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-SshUfYnPZ7t/UlQNgwVDkKjVzCgl4HkTKHXFGEZYukk="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Food_Basics.iwsu4waqdp.png",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1463503"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lu4k3VOO24+FUyKfypZBbOHWAq1KVM5yx09RGVTydsU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:07:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "iwsu4waqdp"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/Food_Basics.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lu4k3VOO24+FUyKfypZBbOHWAq1KVM5yx09RGVTydsU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/Food_Basics.png",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\Food_Basics.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1463503"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Lu4k3VOO24+FUyKfypZBbOHWAq1KVM5yx09RGVTydsU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:07:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Lu4k3VOO24+FUyKfypZBbOHWAq1KVM5yx09RGVTydsU="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/leaf.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\leaf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6165678"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tJzahI+npadRqv/M71Ik5xHeCro0XUtwGjB7i8F9kLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:02:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tJzahI+npadRqv/M71Ik5xHeCro0XUtwGjB7i8F9kLg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/leaf.wdkyh4s49n.jpg",
+      "AssetFile": "C:\\Users\\peyto\\Source\\Repos\\cst8359_lab5\\Lab5\\wwwroot\\uploads\\leaf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6165678"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tJzahI+npadRqv/M71Ik5xHeCro0XUtwGjB7i8F9kLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 18:02:37 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wdkyh4s49n"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/leaf.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tJzahI+npadRqv/M71Ik5xHeCro0XUtwGjB7i8F9kLg="
+        }
+      ]
+    }
+  ]
+}
