@@ -186,29 +186,26 @@ namespace Lab5.Controllers
             {
                 return NotFound();
             }
-
-            // Get all stores
-            var stores = await _context.FoodDeliveryServices.ToListAsync();
-            // Get subscriptions for this customer
+            var foodDeliveryServices = await _context.FoodDeliveryServices.ToListAsync();
+            
             var customerSubscriptions = await _context.Subscriptions
                 .Where(s => s.CustomerId == id)
                 .ToListAsync();
 
-            // Separate subscribed and unsubscribed stores
-            var subscribedStores = (from st in stores
+            var registeredFds = (from st in foodDeliveryServices
                                     join subs in customerSubscriptions on st.Id equals subs.ServiceId
                                     select new FoodDeliveryServiceSubscriptionViewModel
                                     {
-                                        FoodDeliveryServiceId = st.Id,
+                                        FoodDeliveryServiceId = st.Id.ToString(),
                                         Title = st.Title,
                                         IsSubscribed = true
                                     }).ToList();
 
-            var unsubscribedStores = stores
+            var unregisteredFds = foodDeliveryServices
                 .Where(st => !customerSubscriptions.Any(cs => cs.ServiceId == st.Id))
                 .Select(st => new FoodDeliveryServiceSubscriptionViewModel
                 {
-                    FoodDeliveryServiceId = st.Id,
+                    FoodDeliveryServiceId = st.Id.ToString(),
                     Title = st.Title,
                     IsSubscribed = false
                 })
@@ -218,27 +215,27 @@ namespace Lab5.Controllers
             var viewModel = new CustomerSubscriptionViewModel
             {
                 Customer = customer,
-                Subscriptions = subscribedStores.Concat(unsubscribedStores)
+                Subscriptions = registeredFds.Concat(unregisteredFds)
             };
 
-            // Return the correct view with the correct model
+            
             return View(viewModel); 
         }
 
 
-        public async Task<IActionResult> AddSubscription(int customerId, string storeId)
+        public async Task<IActionResult> AddSubscription(int customerId, string foodDeliveryServiceId)
         {
-            var subscription = new Subscription { CustomerId = customerId, ServiceId = storeId };
+            var subscription = new Subscription { CustomerId = customerId, ServiceId = foodDeliveryServiceId };
             _context.Subscriptions.Add(subscription);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(EditSubscription), new { id = customerId });
         }
 
 
-        public async Task<IActionResult> RemoveSubscription(int customerId, string storeId)
+        public async Task<IActionResult> RemoveSubscription(int customerId, string foodDeliveryServiceId)
         {
             var subscription = await _context.Subscriptions
-                .FirstOrDefaultAsync(s => s.CustomerId == customerId && s.ServiceId == storeId);
+                .FirstOrDefaultAsync(s => s.CustomerId == customerId && s.ServiceId == foodDeliveryServiceId);
             if (subscription != null)
             {
                 _context.Subscriptions.Remove(subscription);

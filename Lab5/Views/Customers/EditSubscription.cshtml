@@ -10,8 +10,8 @@
     <thead>
         <tr>
             <th>Food Delivery Service</th>
-            <th>Subscribed?</th>
-            <th>Action</th>
+            <th>Registered</th>
+            <th>Register/Unregister</th>
         </tr>
     </thead>
     <tbody>
@@ -23,15 +23,17 @@
                 <td>
                     @if (item.IsSubscribed)
                     {
+                        <div>Unregistering from ID: @item.FoodDeliveryServiceId</div>
                         <a asp-action="RemoveSubscription"
                            asp-route-customerId="@Model.Customer.Id"
-                           asp-route-storeId="@item.FoodDeliveryServiceId">Unsubscribe</a>
+                           asp-route-foodDeliveryServiceId="@item.FoodDeliveryServiceId">Unregister</a>
                     }
                     else
                     {
+                        <div>Registering to ID: @item.FoodDeliveryServiceId</div>
                         <a asp-action="AddSubscription"
                            asp-route-customerId="@Model.Customer.Id"
-                           asp-route-storeId="@item.FoodDeliveryServiceId">Subscribe</a>
+                           asp-route-foodDeliveryServiceId="@item.FoodDeliveryServiceId">Register</a>
                     }
                 </td>
             </tr>

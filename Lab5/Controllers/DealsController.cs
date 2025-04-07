@@ -41,16 +41,16 @@ namespace Lab5.Controllers
             if (string.IsNullOrEmpty(id))
                 return NotFound();
 
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store == null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(id);
+            if (fds == null)
                 return NotFound();
 
-            var flyers = await _context.Deals.Where(f => f.ServiceId == id).ToListAsync();
+            var deals = await _context.Deals.Where(f => f.ServiceId == id).ToListAsync();
 
             var viewModel = new DealsPostsViewModel
             {
-                FoodDeliveryService = store,
-                Deals = flyers
+                FoodDeliveryService = fds,
+                Deals = deals
             };
             return View(viewModel);
         }
@@ -76,14 +76,14 @@ namespace Lab5.Controllers
         // GET: Deals/Create
         public async Task<IActionResult> Create(string id)
         {
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store == null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(id);
+            if (fds == null)
                 return NotFound();
 
             var model = new FileInputViewModel
             {
-                FoodDeliveryServiceId = store.Id,
-                FoodDeliveryServiceTitle = store.Title
+                FoodDeliveryServiceId = fds.Id,
+                FoodDeliveryServiceTitle = fds.Title
             };
 
             return View(model);
@@ -97,8 +97,8 @@ namespace Lab5.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var store = await _context.FoodDeliveryServices.FindAsync(model.FoodDeliveryServiceId);
-            if (store == null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(model.FoodDeliveryServiceId);
+            if (fds == null)
                 return NotFound();
 
             if (model.File != null && model.File.Length > 0)
@@ -112,19 +112,19 @@ namespace Lab5.Controllers
                     await model.File.CopyToAsync(stream);
                 }
 
-                var flyer = new Deal
+                var deal = new Deal
                 {
-                    ServiceId = store.Id,
+                    ServiceId = fds.Id,
                     DealTitle = model.File.FileName,
                     ImageURL = "/uploads/" + model.File.FileName // Store relative path
                 };
 
-                _context.Deals.Add(flyer);
+                _context.Deals.Add(deal);
                 await _context.SaveChangesAsync();
 
                 
             }
-            return RedirectToAction(nameof(Index), new { id = store.Id });
+            return RedirectToAction(nameof(Index), new { id = fds.Id });
         }
 
 
@@ -185,38 +185,38 @@ namespace Lab5.Controllers
         }
 
         // GET: Flyers/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
-            var flyer = await _context.Deals
+            var deal = await _context.Deals
                 .Include(f => f.FoodDeliveryService)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (flyer == null)
+                .FirstOrDefaultAsync(m => m.ServiceId == id);
+            if (deal == null)
                 return NotFound();
 
-            return View(flyer);
+            return View(deal);
         }
 
         // POST: Flyers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var flyer = await _context.Deals.FindAsync(id.ToString());
+            var deal = await _context.Deals.FindAsync(id);
 
-            if (flyer == null)
+            if (deal == null)
                 return NotFound();
 
             // Delete the file from server if required
             var uploads = Path.Combine(_env.WebRootPath, "uploads");
-            var filePath = Path.Combine(uploads, flyer.DealTitle);
+            var filePath = Path.Combine(uploads, deal.DealTitle);
             if (System.IO.File.Exists(filePath))
                 System.IO.File.Delete(filePath);
 
-            var storeId = flyer.ServiceId;
-            _context.Deals.Remove(flyer);
+            var fdsId = deal.ServiceId;
+            _context.Deals.Remove(deal);
             await _context.SaveChangesAsync();
 
-            return RedirectToAction(nameof(Index), new { id = storeId });
+            return RedirectToAction(nameof(Index), new { id = fdsId });
         }
 
         private bool DealExists(string id)

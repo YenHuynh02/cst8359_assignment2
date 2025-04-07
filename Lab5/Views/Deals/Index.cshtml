@@ -19,18 +19,23 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var flyer in Model.Deals)
+
+        @foreach (var deal in Model.Deals)
         {
             <tr>
                 <td>
 
-                    <img src="~/uploads/@flyer.DealTitle" alt="Flyer Image" style="max-width:200px; height:auto;" />
+                    <img src="~/uploads/@deal.DealTitle" alt="Flyer Image" style="max-width:200px; height:auto;" />
                 </td>
-                <td>@flyer.DealTitle</td>
+                <td>@deal.DealTitle</td>
                 <td>
-                    <a asp-action="Delete" asp-route-id="@flyer.Id">Delete</a>
+                    <a asp-controller="Deals" asp-action="Delete" asp-route-id="@deal.ServiceId">Delete</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
+
+<div>
+    <a asp-action="Index" asp-controller="FoodDeliveryServices">Back to List</a>
+</div>
