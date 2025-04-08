@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\bootstrap.min.css"
     },
     {
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png",
+      "PackagePath": "staticwebassets\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png"
+    },
+    {
       "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\Costco.png",
       "PackagePath": "staticwebassets\\uploads\\Costco.png"
     },
@@ -31,6 +35,10 @@
     {
       "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\linkedln.png",
       "PackagePath": "staticwebassets\\uploads\\linkedln.png"
+    },
+    {
+      "Id": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\thumbsnails.png",
+      "PackagePath": "staticwebassets\\uploads\\thumbsnails.png"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lab5.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",

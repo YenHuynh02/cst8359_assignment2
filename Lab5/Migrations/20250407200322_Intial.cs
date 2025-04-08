@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Lab5.Migrations
 {
     /// <inheritdoc />
-    public partial class Initial : Migration
+    public partial class Intial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -43,20 +43,20 @@ namespace Lab5.Migrations
                 name: "Deals",
                 columns: table => new
                 {
-                    ServiceId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FoodDeliveryServiceId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Id = table.Column<int>(type: "int", nullable: false),
                     DealTitle = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ImageURL = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    FoodDeliveryServiceId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    ImageURL = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Deals", x => x.ServiceId);
+                    table.PrimaryKey("PK_Deals", x => x.FoodDeliveryServiceId);
                     table.ForeignKey(
                         name: "FK_Deals_FoodDeliveryService_FoodDeliveryServiceId",
                         column: x => x.FoodDeliveryServiceId,
                         principalTable: "FoodDeliveryService",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,11 +82,6 @@ namespace Lab5.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Deals_FoodDeliveryServiceId",
-                table: "Deals",
-                column: "FoodDeliveryServiceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Subscriptions_FoodDeliveryServiceId",

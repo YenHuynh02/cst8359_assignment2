@@ -50,16 +50,13 @@ namespace Lab5.Migrations
 
             modelBuilder.Entity("Lab5.Models.Deal", b =>
                 {
-                    b.Property<string>("ServiceId")
+                    b.Property<string>("FoodDeliveryServiceId")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("DealTitle")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
-
-                    b.Property<string>("FoodDeliveryServiceId")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Id")
                         .HasColumnType("int");
@@ -69,9 +66,7 @@ namespace Lab5.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("ServiceId");
-
-                    b.HasIndex("FoodDeliveryServiceId");
+                    b.HasKey("FoodDeliveryServiceId");
 
                     b.ToTable("Deals");
                 });
@@ -113,7 +108,9 @@ namespace Lab5.Migrations
                 {
                     b.HasOne("Lab5.Models.FoodDeliveryService", "FoodDeliveryService")
                         .WithMany()
-                        .HasForeignKey("FoodDeliveryServiceId");
+                        .HasForeignKey("FoodDeliveryServiceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("FoodDeliveryService");
                 });

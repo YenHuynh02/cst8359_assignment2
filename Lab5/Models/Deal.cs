@@ -19,9 +19,9 @@ namespace Lab5.Models
         public string ImageURL { get; set; }
 
 
-
+        [ForeignKey("FoodDeliveryServiceId")]
         public FoodDeliveryService FoodDeliveryService { get; set; }
-        public string ServiceId { get; set; }
+        public string FoodDeliveryServiceId { get; set; }
 
     }
 }

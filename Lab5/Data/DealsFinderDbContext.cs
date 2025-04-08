@@ -26,7 +26,7 @@ namespace Lab5.Data
             modelBuilder.Entity<Subscription>().HasOne(x => x.FoodDeliveryService).WithMany(x => x.Subscriptions).HasForeignKey(x => x.FoodDeliveryServiceId);
 
             modelBuilder.Entity<Deal>()
-                .HasKey(d => new { d.ServiceId });
+                .HasKey(d => new { d.FoodDeliveryServiceId });
         }
     }       
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tiRnQRiapxKpZ80MIYrF2taRt36bkjQZEb3fcO1acxw=",
+  "Hash": "wOjw4dXX0KfHoY2fchvMUCb1hogt4LB1CNiIhEOaMOk=",
   "Source": "Lab5",
   "BasePath": "_content/Lab5",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\StyleSheet.css"
+    },
+    {
+      "Identity": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/1732a860-01a7-454b-b929-e566465c8c3a#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "72p5w5zdst",
+      "Integrity": "H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png"
     },
     {
       "Identity": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\ballon.jpg",
@@ -183,6 +204,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\uploads\\linkedln.png"
+    },
+    {
+      "Identity": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\thumbsnails.png",
+      "SourceId": "Lab5",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\",
+      "BasePath": "_content/Lab5",
+      "RelativePath": "uploads/thumbsnails#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s3ovngh9gh",
+      "Integrity": "yJLCUAreOyJP2DYTxjr4yjMT/NRJgeEvW4VSBk0OyYc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\thumbsnails.png"
     }
   ],
   "Endpoints": [
@@ -347,6 +389,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-G4coT6mev16s3uuGEfOtmKIHT4bawUeht4MFlvv9ISI="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1732a860-01a7-454b-b929-e566465c8c3a.72p5w5zdst.png",
+      "AssetFile": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 20:29:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "72p5w5zdst"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/1732a860-01a7-454b-b929-e566465c8c3a.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/1732a860-01a7-454b-b929-e566465c8c3a.png",
+      "AssetFile": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\1732a860-01a7-454b-b929-e566465c8c3a.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "115102"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 20:29:00 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg="
         }
       ]
     },
@@ -783,7 +907,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:33:50 GMT"
+          "Value": "Mon, 07 Apr 2025 20:05:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -828,7 +952,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 07 Apr 2025 18:33:50 GMT"
+          "Value": "Mon, 07 Apr 2025 20:05:22 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -839,6 +963,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-H9JFALqw1KJHLrp1GPhRWx1uzvKviDpQUzvgyiac1Cg="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/thumbsnails.png",
+      "AssetFile": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\thumbsnails.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19946"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yJLCUAreOyJP2DYTxjr4yjMT/NRJgeEvW4VSBk0OyYc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:43:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yJLCUAreOyJP2DYTxjr4yjMT/NRJgeEvW4VSBk0OyYc="
+        }
+      ]
+    },
+    {
+      "Route": "uploads/thumbsnails.s3ovngh9gh.png",
+      "AssetFile": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\wwwroot\\uploads\\thumbsnails.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19946"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yJLCUAreOyJP2DYTxjr4yjMT/NRJgeEvW4VSBk0OyYc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 07 Apr 2025 19:43:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s3ovngh9gh"
+        },
+        {
+          "Name": "label",
+          "Value": "uploads/thumbsnails.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yJLCUAreOyJP2DYTxjr4yjMT/NRJgeEvW4VSBk0OyYc="
         }
       ]
     }

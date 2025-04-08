@@ -1,8 +1,10 @@
 wwwroot\bootstrap.min.css
 wwwroot\StyleSheet.css
+wwwroot\uploads\1732a860-01a7-454b-b929-e566465c8c3a.png
 wwwroot\uploads\ballon.jpg
 wwwroot\uploads\bird.jpg
 wwwroot\uploads\Costco.png
 wwwroot\uploads\Food_Basics.png
 wwwroot\uploads\leaf.jpg
 wwwroot\uploads\linkedln.png
+wwwroot\uploads\thumbsnails.png

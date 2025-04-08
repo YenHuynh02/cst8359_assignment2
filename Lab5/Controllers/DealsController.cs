@@ -45,7 +45,7 @@ namespace Lab5.Controllers
             if (fds == null)
                 return NotFound();
 
-            var deals = await _context.Deals.Where(f => f.ServiceId == id).ToListAsync();
+            var deals = await _context.Deals.Where(f => f.FoodDeliveryServiceId == id).ToListAsync();
 
             var viewModel = new DealsPostsViewModel
             {
@@ -64,7 +64,7 @@ namespace Lab5.Controllers
             }
 
             var deal = await _context.Deals
-                .FirstOrDefaultAsync(m => m.ServiceId == id);
+                .FirstOrDefaultAsync(m => m.FoodDeliveryServiceId == id);
             if (deal == null)
             {
                 return NotFound();
@@ -103,9 +103,10 @@ namespace Lab5.Controllers
 
             if (model.File != null && model.File.Length > 0)
             {
+                var uniqueFileName = Guid.NewGuid().ToString() + Path.GetExtension(model.File.FileName);
                 var uploads = Path.Combine(_env.WebRootPath, "uploads");
                 Directory.CreateDirectory(uploads);
-                var filePath = Path.Combine(uploads, model.File.FileName);
+                var filePath = Path.Combine(uploads, uniqueFileName);
 
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
@@ -114,15 +115,13 @@ namespace Lab5.Controllers
 
                 var deal = new Deal
                 {
-                    ServiceId = fds.Id,
-                    DealTitle = model.File.FileName,
-                    ImageURL = "/uploads/" + model.File.FileName // Store relative path
+                    FoodDeliveryServiceId = fds.Id,
+                    DealTitle = uniqueFileName,
+                    ImageURL = "/uploads/" + uniqueFileName // Store relative path
                 };
 
                 _context.Deals.Add(deal);
                 await _context.SaveChangesAsync();
-
-                
             }
             return RedirectToAction(nameof(Index), new { id = fds.Id });
         }
@@ -156,7 +155,7 @@ namespace Lab5.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(string id, [Bind("Id,DealTitle,ImageURL,FoodDeliveryServiceId")] Deal deal)
         {
-            if (id != deal.ServiceId)
+            if (id != deal.FoodDeliveryServiceId)
             {
                 return NotFound();
             }
@@ -170,7 +169,7 @@ namespace Lab5.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!DealExists(deal.ServiceId))
+                    if (!DealExists(deal.FoodDeliveryServiceId))
                     {
                         return NotFound();
                     }
@@ -189,7 +188,7 @@ namespace Lab5.Controllers
         {
             var deal = await _context.Deals
                 .Include(f => f.FoodDeliveryService)
-                .FirstOrDefaultAsync(m => m.ServiceId == id);
+                .FirstOrDefaultAsync(m => m.FoodDeliveryServiceId == id);
             if (deal == null)
                 return NotFound();
 
@@ -212,7 +211,7 @@ namespace Lab5.Controllers
             if (System.IO.File.Exists(filePath))
                 System.IO.File.Delete(filePath);
 
-            var fdsId = deal.ServiceId;
+            var fdsId = deal.FoodDeliveryServiceId;
             _context.Deals.Remove(deal);
             await _context.SaveChangesAsync();
 
@@ -221,7 +220,7 @@ namespace Lab5.Controllers
 
         private bool DealExists(string id)
         {
-            return _context.Deals.Any(e => e.ServiceId == id);
+            return _context.Deals.Any(e => e.FoodDeliveryServiceId == id);
         }
 
         
