@@ -14,6 +14,7 @@ using Lab5.Models.ViewModels;
 
 namespace Lab5.Controllers
 {
+    
     public class DealsController : Controller
     {
         private readonly DealsFinderDbContext _context;
@@ -89,7 +90,7 @@ namespace Lab5.Controllers
             return View(model);
         }
 
-        // POST: Flyers/Create
+        // POST: Deals/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(FileInputViewModel model)

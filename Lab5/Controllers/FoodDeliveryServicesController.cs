@@ -53,20 +53,20 @@ namespace Lab5.Controllers
 
         public async Task<IActionResult> Create(string id)
         {
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store == null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(id);
+            if (fds == null)
                 return NotFound();
 
             var model = new FileInputViewModel
             {
-                FoodDeliveryServiceId = store.Id,
-                FoodDeliveryServiceTitle = store.Title
+                FoodDeliveryServiceId = fds.Id,
+                FoodDeliveryServiceTitle = fds.Title
             };
 
             return View(model);
         }
 
-        // POST: Flyers/Create
+        // POST: FoodDeliveryService/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(FileInputViewModel model)
@@ -74,8 +74,8 @@ namespace Lab5.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            var store = await _context.FoodDeliveryServices.FindAsync(model.FoodDeliveryServiceId);
-            if (store == null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(model.FoodDeliveryServiceId);
+            if (fds == null)
                 return NotFound();
 
             if (model.File != null && model.File.Length > 0)
@@ -90,13 +90,13 @@ namespace Lab5.Controllers
 
                 var service = new FoodDeliveryService
                 {
-                    Id = store.Id,
+                    Id = fds.Id,
                     Title = model.File.FileName
                 };
                 _context.FoodDeliveryServices.Add(service);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction(nameof(Index), new { id = store.Id });
+                return RedirectToAction(nameof(Index), new { id = fds.Id });
             }
 
             return View(model);
@@ -161,25 +161,25 @@ namespace Lab5.Controllers
                 return NotFound();
             }
 
-            var store = await _context.FoodDeliveryServices
+            var fds = await _context.FoodDeliveryServices
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (store == null)
+            if (fds == null)
             {
                 return NotFound();
             }
 
-            return View(store);
+            return View(fds);
         }
 
-        // POST: Stores/Delete/5
+        // POST: FoodDeliveryService/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store != null)
+            var fds = await _context.FoodDeliveryServices.FindAsync(id);
+            if (fds != null)
             {
-                _context.FoodDeliveryServices.Remove(store);
+                _context.FoodDeliveryServices.Remove(fds);
             }
 
             await _context.SaveChangesAsync();

@@ -8031,23 +8031,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\yenhu\\.nuget\\packages\\": {},
+    "C:\\Users\\peyto\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\Lab5.csproj",
+      "projectUniqueName": "C:\\Users\\peyto\\source\\repos\\Peyton_Yen_Ass2\\Lab5\\Lab5.csproj",
       "projectName": "Lab5",
-      "projectPath": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\Lab5.csproj",
-      "packagesPath": "C:\\Users\\yenhu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\yenhu\\OneDrive\\Algonquin College\\Winter 2025\\CST8359 - .Net Enterprise\\Ass2\\Lab5\\obj\\",
+      "projectPath": "C:\\Users\\peyto\\source\\repos\\Peyton_Yen_Ass2\\Lab5\\Lab5.csproj",
+      "packagesPath": "C:\\Users\\peyto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\peyto\\source\\repos\\Peyton_Yen_Ass2\\Lab5\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\yenhu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\peyto\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

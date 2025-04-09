@@ -4,7 +4,7 @@
 	ViewData["Title"] = "Food Delivery Services";
 }
 
-<h1>Stores</h1>
+<h1>Food Delivery Services</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -15,23 +15,23 @@
         <tr>
             <th>@Html.DisplayNameFor(model => model.FoodDeliveryServices.FirstOrDefault().Title)</th>
             <th>@Html.DisplayNameFor(model => model.FoodDeliveryServices.FirstOrDefault().Fee)</th>
-            <th>Subscribers</th>
+            <th>Subscribers to Food Delivery Service</th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var store in Model.FoodDeliveryServices)
+        @foreach (var fds in Model.FoodDeliveryServices)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => store.Title)
+                    @Html.DisplayFor(modelItem => fds.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => store.Fee)
+                    @Html.DisplayFor(modelItem => fds.Fee)
                 </td>
                 <td>
                     <ul>
-                        @foreach (var subscription in Model.Subscriptions.Where(s => s.FoodDeliveryServiceId == store.Id))
+                        @foreach (var subscription in Model.Subscriptions.Where(s => s.FoodDeliveryServiceId == fds.Id))
                         {
                             var customer = Model.Customers.FirstOrDefault(c => c.Id == subscription.CustomerId);
                             if (customer != null)
@@ -42,34 +42,15 @@
                     </ul>
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@store.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@store.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@store.Id">Delete</a> |
-                    <a asp-controller="Deals" asp-action="Index" asp-route-id="@store.Id">Deals</a> |
+                    <a asp-action="Edit" asp-route-id="@fds.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@fds.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@fds.Id">Delete</a> |
+                    <a asp-controller="Deals" asp-action="Index" asp-route-id="@fds.Id">Deals</a> |
                     @* Need to adjust *@
-                    <a asp-action="Index" asp-route-selectedCustomerId="@store.Id">Select</a>
+                    <a asp-action="Index" asp-route-selectedCustomerId="@fds.Id">Select</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
-@if (ViewBag.SelectedFoodDeliveryService != null)
-{
-    <h3>Subscriptions for @ViewBag.SelectedFoodDeliveryService.Title</h3>
-
-    @if (ViewBag.SelectedSubscriptions != null && ViewBag.SelectedSubscriptions.Count > 0)
-    {
-        <ul>
-            @foreach (var customer in ViewBag.SelectedSubscriptions)
-            {
-                <li>@customer</li>
-            }
-        </ul>
-    }
-    else
-    {
-        <p>No subscriptions found.</p>
-    }
-}
 
