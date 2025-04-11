@@ -188,7 +188,7 @@ namespace Lab5.Controllers
         {
             var deal = await _context.Deals
                 .Include(f => f.FoodDeliveryService)
-                .FirstOrDefaultAsync(m => m.FoodDeliveryServiceId == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (deal == null)
                 return NotFound();
 

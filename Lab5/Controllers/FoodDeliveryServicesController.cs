@@ -22,7 +22,7 @@ namespace Lab5.Controllers
         }
 
         // GET: FoodDeliveryServices
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? selectedFoodDeliveryServiceId)
         {
             var viewModel = new DealsViewModel
             {
@@ -30,6 +30,19 @@ namespace Lab5.Controllers
                 FoodDeliveryServices = await _context.FoodDeliveryServices.ToListAsync(),
                 Subscriptions = await _context.Subscriptions.ToListAsync()
             };
+            if (!string.IsNullOrEmpty(selectedFoodDeliveryServiceId)) { }
+            {
+                var selectedFoodDeliveryService = await _context.FoodDeliveryServices
+            .FirstOrDefaultAsync(f => f.Id == selectedFoodDeliveryServiceId);
+
+                var selectedSubscriptions = _context.Subscriptions
+                    .Where(s => s.FoodDeliveryServiceId == selectedFoodDeliveryServiceId)
+                    .Select(s => _context.Customers.FirstOrDefault(c => c.Id == s.CustomerId).FullName)
+                    .ToList();
+
+                ViewBag.SelectedFoodDeliveryService = selectedFoodDeliveryService;
+                ViewBag.SelectedSubscriptions = selectedSubscriptions;
+            }
             return View(viewModel);
         }
 
@@ -51,55 +64,24 @@ namespace Lab5.Controllers
             return View(foodDeliveryService);
         }
 
-        public async Task<IActionResult> Create(string id)
+        // GET: FoodDeliveryServices/Create
+        public IActionResult Create()
         {
-            var store = await _context.FoodDeliveryServices.FindAsync(id);
-            if (store == null)
-                return NotFound();
-
-            var model = new FileInputViewModel
-            {
-                FoodDeliveryServiceId = store.Id,
-                FoodDeliveryServiceTitle = store.Title
-            };
-
-            return View(model);
+            return View();
         }
 
-        // POST: Flyers/Create
+        // POST: FoodDeliveryServices/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(FileInputViewModel model)
+        public async Task<IActionResult> Create([Bind("Id,Title,Fee")] FoodDeliveryService foodDeliveryService)
         {
-            if (!ModelState.IsValid)
-                return View(model);
-
-            var store = await _context.FoodDeliveryServices.FindAsync(model.FoodDeliveryServiceId);
-            if (store == null)
-                return NotFound();
-
-            if (model.File != null && model.File.Length > 0)
+            if (ModelState.IsValid)
             {
-                var uploads = Path.Combine(_env.WebRootPath, "uploads");
-                Directory.CreateDirectory(uploads);
-                var filePath = Path.Combine(uploads, model.File.FileName);
-                using (var stream = new FileStream(filePath, FileMode.Create))
-                {
-                    await model.File.CopyToAsync(stream);
-                }
-
-                var service = new FoodDeliveryService
-                {
-                    Id = store.Id,
-                    Title = model.File.FileName
-                };
-                _context.FoodDeliveryServices.Add(service);
+                _context.Add(foodDeliveryService);
                 await _context.SaveChangesAsync();
-
-                return RedirectToAction(nameof(Index), new { id = store.Id });
+                return RedirectToAction(nameof(Index));
             }
-
-            return View(model);
+            return View(foodDeliveryService);
         }
 
         // GET: FoodDeliveryServices/Edit/5
