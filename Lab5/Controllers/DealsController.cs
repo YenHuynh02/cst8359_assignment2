@@ -89,7 +89,7 @@ namespace Lab5.Controllers
             return View(model);
         }
 
-        // POST: Flyers/Create
+        // POST: Deals/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(FileInputViewModel model)
@@ -183,7 +183,7 @@ namespace Lab5.Controllers
             return View(deal);
         }
 
-        // GET: Flyers/Delete/5
+        // GET: Deals/Delete/5
         public async Task<IActionResult> Delete(string id)
         {
             var deal = await _context.Deals
@@ -195,7 +195,7 @@ namespace Lab5.Controllers
             return View(deal);
         }
 
-        // POST: Flyers/Delete/5
+        // POST: Deals/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)

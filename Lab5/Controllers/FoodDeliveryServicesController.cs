@@ -143,14 +143,14 @@ namespace Lab5.Controllers
                 return NotFound();
             }
 
-            var store = await _context.FoodDeliveryServices
+            var foodDeliveryService = await _context.FoodDeliveryServices
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (store == null)
+            if (foodDeliveryService == null)
             {
                 return NotFound();
             }
 
-            return View(store);
+            return View(foodDeliveryService);
         }
 
         // POST: Stores/Delete/5

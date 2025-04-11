@@ -20,22 +20,22 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var store in Model.FoodDeliveryServices)
+        @foreach (var foodDeliveryService in Model.FoodDeliveryServices)
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => store.Title)
+                    @Html.DisplayFor(modelItem => foodDeliveryService.Title)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => store.Fee)
+                    @Html.DisplayFor(modelItem => foodDeliveryService.Fee)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@store.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@store.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@store.Id">Delete</a> |
-                    <a asp-controller="Deals" asp-action="Index" asp-route-id="@store.Id">Deals</a> |
+                    <a asp-action="Edit" asp-route-id="@foodDeliveryService.Id">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@foodDeliveryService.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@foodDeliveryService.Id">Delete</a> |
+                    <a asp-controller="Deals" asp-action="Index" asp-route-id="@foodDeliveryService.Id">Deals</a> |
                     @* Need to adjust *@
-                    <a asp-action="Index" asp-route-selectedFoodDeliveryServiceId="@store.Id">Select</a>
+                    <a asp-action="Index" asp-route-selectedFoodDeliveryServiceId="@foodDeliveryService.Id">Select</a>
                 </td>
             </tr>
         }
