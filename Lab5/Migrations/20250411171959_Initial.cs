@@ -43,14 +43,14 @@ namespace Lab5.Migrations
                 name: "Deals",
                 columns: table => new
                 {
-                    FoodDeliveryServiceId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Id = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     DealTitle = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    ImageURL = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
+                    ImageURL = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    FoodDeliveryServiceId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Deals", x => x.FoodDeliveryServiceId);
+                    table.PrimaryKey("PK_Deals", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Deals_FoodDeliveryService_FoodDeliveryServiceId",
                         column: x => x.FoodDeliveryServiceId,
@@ -82,6 +82,11 @@ namespace Lab5.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Deals_FoodDeliveryServiceId",
+                table: "Deals",
+                column: "FoodDeliveryServiceId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Subscriptions_FoodDeliveryServiceId",

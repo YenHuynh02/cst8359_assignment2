@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lab5.Migrations
 {
     [DbContext(typeof(DealsFinderDbContext))]
-    [Migration("20250410142448_Initial")]
+    [Migration("20250411171959_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -53,7 +53,7 @@ namespace Lab5.Migrations
 
             modelBuilder.Entity("Lab5.Models.Deal", b =>
                 {
-                    b.Property<string>("FoodDeliveryServiceId")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
@@ -62,15 +62,18 @@ namespace Lab5.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("FoodDeliveryServiceId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("FoodDeliveryServiceId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("FoodDeliveryServiceId");
 
                     b.ToTable("Deals");
                 });
