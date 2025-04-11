@@ -50,7 +50,7 @@ namespace Lab5.Migrations
 
             modelBuilder.Entity("Lab5.Models.Deal", b =>
                 {
-                    b.Property<string>("FoodDeliveryServiceId")
+                    b.Property<string>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
@@ -59,15 +59,18 @@ namespace Lab5.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<string>("FoodDeliveryServiceId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ImageURL")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.HasKey("FoodDeliveryServiceId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("FoodDeliveryServiceId");
 
                     b.ToTable("Deals");
                 });
