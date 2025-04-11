@@ -5,7 +5,7 @@ namespace Lab5.Models
 {
     public class Deal
     {
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -21,6 +21,8 @@ namespace Lab5.Models
 
         [ForeignKey("FoodDeliveryServiceId")]
         public FoodDeliveryService FoodDeliveryService { get; set; }
+
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string FoodDeliveryServiceId { get; set; }
 
     }

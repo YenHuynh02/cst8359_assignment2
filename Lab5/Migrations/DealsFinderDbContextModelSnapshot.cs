@@ -51,6 +51,7 @@ namespace Lab5.Migrations
             modelBuilder.Entity("Lab5.Models.Deal", b =>
                 {
                     b.Property<string>("FoodDeliveryServiceId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("DealTitle")
