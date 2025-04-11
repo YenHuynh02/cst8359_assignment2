@@ -30,24 +30,12 @@
                     @Html.DisplayFor(modelItem => store.Fee)
                 </td>
                 <td>
-                    <ul>
-                        @foreach (var subscription in Model.Subscriptions.Where(s => s.FoodDeliveryServiceId == store.Id))
-                        {
-                            var customer = Model.Customers.FirstOrDefault(c => c.Id == subscription.CustomerId);
-                            if (customer != null)
-                            {
-                                <li>@customer.FullName</li>
-                            }
-                        }
-                    </ul>
-                </td>
-                <td>
                     <a asp-action="Edit" asp-route-id="@store.Id">Edit</a> |
                     <a asp-action="Details" asp-route-id="@store.Id">Details</a> |
                     <a asp-action="Delete" asp-route-id="@store.Id">Delete</a> |
                     <a asp-controller="Deals" asp-action="Index" asp-route-id="@store.Id">Deals</a> |
                     @* Need to adjust *@
-                    <a asp-action="Index" asp-route-selectedCustomerId="@store.Id">Select</a>
+                    <a asp-action="Index" asp-route-selectedFoodDeliveryServiceId="@store.Id">Select</a>
                 </td>
             </tr>
         }
